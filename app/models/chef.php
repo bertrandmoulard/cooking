@@ -2,20 +2,18 @@
 
 require_once(__DIR__ . '/../helpers/connection.php');
 
-class RecipeModel {
+class ChefModel {
 
   private $name;
-  private $description;
 
-  public function __construct($name, $description) {
+  public function __construct($name) {
     $this->name = $name;
-    $this->description = $description;
   }
 
   public function save() {
     $connection = Connection::getInstance();
     $connection->exec(
-      "INSERT INTO recipes (name, description) VALUES ('$this->name', '$this->description')"
+      "INSERT INTO chefs (name) VALUES ('$this->name')"
     );
   }
 
