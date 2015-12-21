@@ -12,22 +12,18 @@ class RecipeModel {
     $this->description = $description;
   }
 
-  public function save() {
+  public function create() {
     $connection = Connection::getInstance();
     $connection->exec(
       "INSERT INTO recipes (name, description) VALUES ('$this->name', '$this->description')"
     );
   }
 
-  public static function find($id) {
+  public static function findOne($id) {
     $connection = Connection::getInstance();
     $statement = $connection->prepare( "SELECT * FROM recipes where id=$id");
     $statement->execute();
     $res = $statement->fetch();
     return new RecipeModel($res['name'], $res['description']);
-  }
-
-  public static function all() {
-
   }
 }

@@ -10,18 +10,18 @@ class ChefModel {
     $this->name = $name;
   }
 
-  public function save() {
+  public function create() {
     $connection = Connection::getInstance();
     $connection->exec(
       "INSERT INTO chefs (name) VALUES ('$this->name')"
     );
   }
 
-  public static function find($id) {
-    // returns recipe with given id
-  }
-
-  public static function all() {
-    // returns all recipes
+  public static function findOne($id) {
+    $connection = Connection::getInstance();
+    $statement = $connection->prepare( "SELECT * FROM chefs where id=$id");
+    $statement->execute();
+    $res = $statement->fetch();
+    return new ChefModel($res['name'], $res['description']);
   }
 }
