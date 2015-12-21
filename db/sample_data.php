@@ -8,8 +8,3 @@ $recipe->create();
 
 $recipe = new RecipeModel("Nutella Crepes", "Crepes filled with Nutella");
 $recipe->create();
-
-$chef = new ChefModel("Nigella");
-$chef->create();
-
-
