@@ -9,8 +9,19 @@ class RecipesController {
     $this->renderOne($recipe);
   }
 
+  public function index() {
+    $recipes = RecipeModel::all();
+    $this->renderMany($recipes);
+  }
+
   private function renderOne($recipe) {
     echo $recipe->name;
+  }
+
+  private function renderMany($recipes) {
+    foreach($recipes as $recipe) {
+      echo $recipe->name . "</br>";
+    }
   }
 }
 

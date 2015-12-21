@@ -26,4 +26,15 @@ class RecipeModel {
     $res = $statement->fetch();
     return new RecipeModel($res['name'], $res['description']);
   }
+
+  public static function all() {
+    $connection = Connection::getInstance();
+    $statement = $connection->prepare( "SELECT * FROM recipes order by id DESC");
+    $statement->execute();
+    $recipes = [];
+    while($row = $statement->fetch()) {
+      array_push($recipes, new RecipeModel($row['name'], $row['description']));
+    }
+    return $recipes;
+  }
 }
