@@ -1,5 +1,7 @@
 <?php
 
+namespace Cooking\Helpers;
+
 class Connection {
   private static $instance = NULL;
 
@@ -9,8 +11,8 @@ class Connection {
 
   public static function getInstance() {
     if (!isset(self::$instance)) {
-      $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-      self::$instance = new PDO('mysql:host=localhost;dbname=cooking',
+      $pdo_options[\PDO::ATTR_ERRMODE] = \PDO::ERRMODE_EXCEPTION;
+      self::$instance = new \PDO('mysql:host=localhost;dbname=cooking',
         'cooking',
         'cookingwithgas',
         $pdo_options

@@ -1,8 +1,10 @@
 <?php
 
-require_once(__DIR__ . '/../helpers/connection.php');
+namespace Cooking\Models;
 
-class RecipeModel {
+use \Cooking\Helpers\Connection;
+
+class Recipe {
 
   public $name;
   public $description;
@@ -24,7 +26,7 @@ class RecipeModel {
     $statement = $connection->prepare( "SELECT * FROM recipes where id=$id");
     $statement->execute();
     $res = $statement->fetch();
-    return new RecipeModel($res['name'], $res['description']);
+    return new Recipe($res['name'], $res['description']);
   }
 
   public static function all() {
@@ -33,7 +35,7 @@ class RecipeModel {
     $statement->execute();
     $recipes = [];
     while($row = $statement->fetch()) {
-      array_push($recipes, new RecipeModel($row['name'], $row['description']));
+      array_push($recipes, new Recipe($row['name'], $row['description']));
     }
     return $recipes;
   }

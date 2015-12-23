@@ -1,8 +1,8 @@
 <?php
 
-require_once(__DIR__ . '/../controllers/recipes_controller.php');
+require __DIR__ . '/../../vendor/autoload.php';
 
-$controller = new RecipesController();
+$controller = new Cooking\Controllers\RecipesController();
 
 if(isset($_GET['id'])) {
   $controller->view($_GET['id']);

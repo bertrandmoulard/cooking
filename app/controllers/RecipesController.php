@@ -1,16 +1,18 @@
 <?php
 
-require_once(__DIR__ . '/../models/recipe.php');
+namespace Cooking\Controllers;
+
+use \Cooking\Models\Recipe;
 
 class RecipesController {
 
   public function view($id) {
-    $recipe = RecipeModel::findOne($id);
+    $recipe = Recipe::findOne($id);
     $this->renderOne($recipe);
   }
 
   public function index() {
-    $recipes = RecipeModel::all();
+    $recipes = Recipe::all();
     $this->renderMany($recipes);
   }
 
