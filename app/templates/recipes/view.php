@@ -1,1 +1,2 @@
-hello, tpl!
+<?
+echo $data->name;
