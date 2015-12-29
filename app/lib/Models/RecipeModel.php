@@ -2,7 +2,7 @@
 
 namespace Cooking\Models;
 
-class Recipe extends Base {
+class RecipeModel extends BaseModel {
 
     protected $field_map = [
         'id' => self::TYPE_INT,

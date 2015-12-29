@@ -2,7 +2,7 @@
 
 namespace Cooking\Models;
 
-class Base {
+class BaseModel {
 
     const TYPE_INT = 'int';
     const TYPE_STRING = 'string';
