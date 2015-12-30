@@ -1,10 +1,14 @@
 <?php
 
-require_once(__DIR__ . '/../app/models/recipe.php');
-require_once(__DIR__ . '/../app/models/chef.php');
+require __DIR__ . '/../vendor/autoload.php';
 
-$recipe = new RecipeModel("Spinach Omelette", "Delicious omelette with spinach, feta and onion");
-$recipe->create();
+use \Cooking\Models\RecipeModel;
 
-$recipe = new RecipeModel("Nutella Crepes", "Crepes filled with Nutella");
-$recipe->create();
+$recipe = new RecipeModel();
+$recipe->hydrate([
+    "name" =>"Spinach Omelette",
+    "description" => "Delicious omelette with spinach, feta and onion"
+]);
+
+var_dump($recipe);
+// $recipe->save();

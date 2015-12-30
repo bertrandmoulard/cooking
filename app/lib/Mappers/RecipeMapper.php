@@ -1,8 +1,8 @@
 <?php
 
-namespace Cooking\Finders;
+namespace Cooking\Mappers;
 
-class RecipeFinder extends BaseFinder {
+class RecipeMapper extends BaseMapper {
     protected $model_class = '\Cooking\Models\RecipeModel';
     protected $table = 'recipes';
 }

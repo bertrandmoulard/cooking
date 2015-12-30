@@ -1,10 +1,10 @@
 <?php
 
-namespace Cooking\Finders;
+namespace Cooking\Mappers;
 
 use \Cooking\Helpers\Connection;
 
-abstract class BaseFinder {
+abstract class BaseMapper {
 
     protected $model_class;
     protected $table;
@@ -16,9 +16,7 @@ abstract class BaseFinder {
 
     protected function hydrateModel(array $raw_result) {
         $model = new $this->model_class;
-        foreach ($raw_result as $key => $value) {
-            $model->$key = $value;
-        }
+        $model->hydrate($raw_result);
         return $model;
     }
 

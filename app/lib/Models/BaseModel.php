@@ -25,4 +25,10 @@ class BaseModel {
     public function __get($field_name) {
         return $this->fields[$field_name];
     }
+
+    public function hydrate($data) {
+        foreach ($data as $key => $value) {
+            $this->$key = $value;
+        }
+    }
 }
