@@ -3,6 +3,7 @@
 namespace Cooking\Mappers;
 
 use \Cooking\Helpers\Connection;
+use \Cooking\Models\BaseModel;
 
 abstract class BaseMapper {
 
@@ -36,5 +37,18 @@ abstract class BaseMapper {
             array_push($models, $this->hydrateModel($result));
         }
         return $models;
+    }
+
+    public function create($model) {
+        $query = "INSERT INTO {$this->table} (";
+        $keys = $model->getNonIdFieldKeys();
+        $query .= join(", ", $keys) . ") VALUES (";
+        $query .= join(", ", array_fill(0, count($keys), "?")) . ")";
+        $values = [];
+        foreach($keys as $key) {
+            array_push($values, $model->$key);
+        }
+        $statement = $this->pdo->prepare($query);
+        $statement->execute($values);
     }
 }

@@ -11,7 +11,7 @@ class BaseModel {
     protected $fields = [];
 
     public function __construct() {
-        foreach ($this->field_map as $field) {
+        foreach (array_keys($this->field_map) as $field) {
             $this->__set($field, null);
         }
     }
@@ -24,6 +24,10 @@ class BaseModel {
 
     public function __get($field_name) {
         return $this->fields[$field_name];
+    }
+
+    public function getNonIdFieldKeys() {
+        return array_diff(array_keys($this->fields), ['id']);
     }
 
     public function hydrate($data) {
