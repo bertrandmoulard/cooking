@@ -8,8 +8,7 @@ abstract class BaseController {
 
     protected $resource;
 
-    public function render($template, $data) {
-        $template = "$this->resource/$template";
+    public function render() {
         include self::TPL_BASE . "layout/application.php";
     }
 
