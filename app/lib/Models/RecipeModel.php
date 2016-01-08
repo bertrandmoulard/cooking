@@ -8,6 +8,8 @@ class RecipeModel extends BaseModel {
         'id' => self::TYPE_INT,
         'name' => self::TYPE_STRING,
         'description' => self::TYPE_STRING,
+        'ingredients' => self::TYPE_STRING,
+        'method' => self::TYPE_STRING
     ];
 }
 
