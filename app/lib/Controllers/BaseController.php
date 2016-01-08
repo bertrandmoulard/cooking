@@ -4,13 +4,11 @@ namespace Cooking\Controllers;
 
 abstract class BaseController {
 
-    const TPL_BASE = __DIR__ . "/../../templates/";
-
     protected $resource;
 
     public function render($template, $data) {
         $template = "$this->resource/$template";
-        include self::TPL_BASE . "layout/application.php";
+        include __DIR__ . "/../../templates/layout/application.php";
     }
 
     public function view($id) {
@@ -27,6 +25,7 @@ abstract class BaseController {
 
     private function getMapperInstance() {
         $class = 'Cooking\Mappers\\' . $this->resource . "Mapper";
+        //namespace for Cooking\Mappers\RecipesMapper
         return new $class();
     }
 }
