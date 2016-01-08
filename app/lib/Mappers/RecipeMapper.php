@@ -3,6 +3,12 @@
 namespace Cooking\Mappers;
 
 class RecipeMapper extends BaseMapper {
-    protected $model_class = '\Cooking\Models\RecipeModel';
-    protected $table = 'recipes';
+
+    protected function getModelClass() {
+        return '\Cooking\Models\RecipeModel';
+    }
+
+    protected function getTableName() {
+        return 'recipes';
+    }
 }
