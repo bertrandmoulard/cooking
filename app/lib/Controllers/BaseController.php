@@ -4,13 +4,12 @@ namespace Cooking\Controllers;
 
 abstract class BaseController {
 
-    const TPL_BASE = __DIR__ . "/../../templates/";
+    const TPL_BASE = "/../../templates/";
 
     protected $resource;
 
-    public function render($template, $data) {
-        $template = "$this->resource/$template";
-        include self::TPL_BASE . "layout/application.php";
+    public function render() {
+        include __DIR__ . self::TPL_BASE . "layout/application.php";
     }
 
     public function view($id) {
