@@ -3,6 +3,9 @@
 namespace Cooking\Controllers;
 
 class RecipesController extends BaseController {
-    protected $resource = "recipe";
+
+    protected function getResourceName() {
+        return "recipe";
+    }
 }
 

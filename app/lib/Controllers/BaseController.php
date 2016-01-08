@@ -4,10 +4,10 @@ namespace Cooking\Controllers;
 
 abstract class BaseController {
 
-    protected $resource;
+    protected abstract function getResourceName();
 
     public function render($template, $data) {
-        $template = "$this->resource/$template";
+        $template = $this->getResourceName() . "/$template";
         include __DIR__ . "/../../templates/layout/application.php";
     }
 
@@ -24,8 +24,7 @@ abstract class BaseController {
     }
 
     private function getMapperInstance() {
-        $class = 'Cooking\Mappers\\' . $this->resource . "Mapper";
-        //namespace for Cooking\Mappers\RecipesMapper
+        $class = 'Cooking\Mappers\\' . ucfirst($this->getResourceName()) . "Mapper";
         return new $class();
     }
 }
