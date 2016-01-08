@@ -8,6 +8,10 @@ You will need
 * an Apache webserver with a \<Directory\> pointing at the root of the repository ("cooking")
 * a Mysql server with a "cooking" database and a "cooking" user with all privileges on the database
 * a config.ini file containing the necessary information to use the database
+* composer (http://getcomposer.org/download) then run
+  ```
+  $ php composer.phar install
+  ```
 
 ### example config.ini
 
