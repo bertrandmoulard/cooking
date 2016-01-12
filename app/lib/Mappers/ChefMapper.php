@@ -3,6 +3,11 @@
 namespace Cooking\Mappers;
 
 class ChefMapper extends BaseMapper {
-    protected $model_class = '\Cooking\Models\ChefModel';
-    protected $table = 'chefs';
+  protected function getModelClass() {
+      return '\Cooking\Models\ChefModel';
+  }
+
+  protected function getTableName() {
+    return 'chefs';
+  }
 }

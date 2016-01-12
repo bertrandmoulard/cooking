@@ -15,20 +15,14 @@ $chef = new ChefModel();
 
 $recipe->hydrate([
     "name" =>"Spinach Omelette",
-    "description" => "Delicious omelette with spinach, feta and onion",
-    "ingredients" => "Eggs, spinach, feta and onion, mushrooms, salt, pepper",
-    "method" => "Whisk eggs with salt and pepper, fry the crap out of it"
+    "description" => "Delicious omelette with spinach, feta and onion"
 ]);
 $recipe_mapper->create($recipe);
 
 $recipe = new RecipeModel();
 $recipe->hydrate([
     "name" =>"Nutella Pancakes",
-    "description" => "Pancakes with Nutella on top",
-    "ingredients" => "1 1/2 Cups all-purpose flour, 3 1/2 tsp baking powder, 1 tsp salt, 1 Tbsp sugar,
-                      1 1/4 Cups milk, 1 egg, 3 Tbsp butter",
-    "method" => "Sift flour, baking powder salt and sugar,
-                      mix milk, egg and butter until smooth, fry pan the crap out of it"
+    "description" => "Pancakes with Nutella on top"
 ]);
 $recipe_mapper->create($recipe);
 

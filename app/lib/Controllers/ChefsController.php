@@ -3,6 +3,8 @@
 namespace Cooking\Controllers;
 
 class ChefsController extends BaseController {
-    protected $resource = "chef";
-}
 
+  protected function getResourceName() {
+    return "chef";
+  }
+}
