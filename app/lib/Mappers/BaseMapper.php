@@ -32,6 +32,7 @@ abstract class BaseMapper {
 
     public function all() {
         $statement = $this->pdo->prepare("SELECT * FROM {$this->getTableName()} ORDER BY id DESC");
+        //execute?
         $statement->execute();
         $results = $statement->fetchAll();
         $models = [];
