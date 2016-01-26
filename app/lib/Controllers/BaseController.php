@@ -13,7 +13,6 @@ abstract class BaseController {
 
     public function view($id) {
         $mapper = $this->getMapperInstance();
-        //find??
         $model = $mapper->find($id);
         $this->render('view.php', $model);
     }
@@ -26,7 +25,6 @@ abstract class BaseController {
 
     private function getMapperInstance() {
         $class = 'Cooking\Mappers\\' . ucfirst($this->getResourceName()) . "Mapper";
-        //why doesn't this return Cooking\Mappers\\RecipeMapper ??
         //namespace for Cooking\Mappers\RecipesMapper
         return new $class();
     }
