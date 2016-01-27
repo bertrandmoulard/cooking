@@ -4,7 +4,7 @@ namespace Cooking\Controllers;
 
 class ChefsController extends BaseController {
 
-  protected function getResourceName() {
-    return "chef";
-  }
+    protected function getResourceName() {
+        return "chef";
+    }
 }
