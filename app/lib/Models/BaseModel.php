@@ -2,22 +2,22 @@
 
 namespace Cooking\Models;
 
-class BaseModel {
+abstract class BaseModel {
 
     const TYPE_INT = 'int';
     const TYPE_STRING = 'string';
 
-    protected $field_map = [];
+    protected abstract function getFieldMap();
     protected $fields = [];
 
     public function __construct() {
-        foreach (array_keys($this->field_map) as $field) {
+        foreach (array_keys($this->getFieldMap()) as $field) {
             $this->__set($field, null);
         }
     }
 
     public function __set($field_name, $value) {
-        if (isset($this->field_map[$field_name])) {
+        if (isset($this->getFieldMap()[$field_name])) {
             $this->fields[$field_name] = $value;
         }
     }
