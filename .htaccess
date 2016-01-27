@@ -9,6 +9,9 @@ RewriteRule ^.*css(.*\.css) /cooking/app/assets/css$1    [NC,L]
 
 # php routes
 RewriteRule   ^recipes/([0-9]+)/?$  app/pages/recipes.php?id=$1     [NC,L]
-RewriteRule   ^chefs/([0-9]+)/?$    app/pages/chefs.php?id=$1       [NC,L]
-RewriteRule   ^recipes  app/pages/recipes.php  [NC,L]
-RewriteRule   ^chefs    app/pages/chefs.php    [NC,L]
+RewriteRule   ^chefs/([0-9]+)/?$  app/pages/chefs.php?id=$1     [NC,L]
+RewriteRule   ^ingredients/([0-9]+)/?$ app/pages/ingredients.php?id=$1 [NC,L]
+
+RewriteRule   ^recipes        app/pages/recipes.php  [NC,L]
+RewriteRule   ^chefs          app/pages/chefs.php    [NC,L]
+RewriteRule   ^ingredients    app/pages/ingredients.php    [NC,L]
