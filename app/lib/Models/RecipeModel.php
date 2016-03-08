@@ -7,7 +7,8 @@ class RecipeModel extends BaseModel {
         return [
             'id' => self::TYPE_INT,
             'name' => self::TYPE_STRING,
-            'description' => self::TYPE_STRING
+            'description' => self::TYPE_STRING,
+            'main_image_file' => self::TYPE_STRING
         ];
     }
 }

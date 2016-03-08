@@ -3,6 +3,7 @@ CREATE TABLE `recipes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `description` varchar(255) NOT NULL DEFAULT '',
+  `main_image_file` varchar(255) NOT NULL DEFAULT '',
    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8;
 
