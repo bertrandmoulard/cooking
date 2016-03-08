@@ -2,10 +2,10 @@ RewriteEngine On
 
 # js and css
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^.*js(.*\.js) /cooking/app/assets/javascript$1    [NC,L]
+RewriteRule ^.*js(.*\.js) app/assets/javascript$1    [NC,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^.*css(.*\.css) /cooking/app/assets/css$1    [NC,L]
+RewriteRule ^.*css(.*\.css) app/assets/css$1    [NC,L]
 
 # php routes
 RewriteRule   ^recipes/([0-9]+)/?$  app/pages/recipes.php?id=$1     [NC,L]
