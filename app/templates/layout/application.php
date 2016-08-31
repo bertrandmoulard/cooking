@@ -1,6 +1,6 @@
 <html>
 <head>
-<link href="https://npmcdn.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
+<link href="https://unpkg.com/basscss@8.0.1/css/basscss.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/application.css" />
 <body>
 <!-- application layout -->
